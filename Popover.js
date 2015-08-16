@@ -75,7 +75,6 @@ var Popover = React.createClass({
       // from the state
       isAwaitingShow && this._startAnimation({show: true});
     });
-    console.log(this.state);
   },
   computeGeometry({contentSize, placement}) {
     placement = placement || this.props.placement;
@@ -119,7 +118,6 @@ var Popover = React.createClass({
         break;
     }
 
-    console.log(geom);
     return geom;
   },
   computeTopGeometry({displayArea, fromRect, contentSize, arrowSize}) {
@@ -366,8 +364,6 @@ var Popover = React.createClass({
     var arrowTransform = (flattenStyle(arrowStyle).transform || []).slice(0);
     arrowTransform.unshift({rotate: this.getArrowRotation(placement)});
     arrowStyle = [...arrowStyle, {transform: arrowTransform}];
-
-    console.log(contentOrigin);
 
     return (
       <TouchableWithoutFeedback onPress={this.props.onClose}>
